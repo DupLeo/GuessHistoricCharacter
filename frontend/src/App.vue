@@ -16,30 +16,27 @@ const jokersRemaining = ref(maxJokers);
 // Nombre de personnages restants à trouver
 const remainingToFind = ref(0);
 
-// Simule un fetch de données
+// Fonction pour récupérer les données depuis le serveur
 const fetchGameData = async () => {
   loading.value = true;
   gameOver.value = false;
   gameResult.value = "";
   jokersRemaining.value = maxJokers;
 
-  await new Promise(r => setTimeout(r, 500)); // délai simulé
+  try {
+    const response = await fetch("http://localhost:3000/lunch-game");
+    if (!response.ok) throw new Error("Erreur lors de la récupération des données");
 
-  gameData.value = {
-    personnages: [
-      { id: 1, name: "Napoléon Bonaparte" },
-      { id: 2, name: "Cléopâtre" },
-      { id: 3, name: "Albert Einstein" },
-      { id: 4, name: "Marie Curie" }
-    ],
-    indices: [0, 3],
-    indiceText: "Europe"
+    const data = await response.json();
+    gameData.value = data;
+    remainingToFind.value = gameData.value.indices.length;
+  } catch (err) {
+    console.error(err);
+    alert("Impossible de récupérer les données du serveur.");
+  } finally {
+    loading.value = false;
   }
-
-  remainingToFind.value = gameData.value.indices.length;
-
-  loading.value = false;
-}
+};
 
 // Initialisation
 fetchGameData();
@@ -47,13 +44,13 @@ fetchGameData();
 // Reset du jeu
 const resetGame = async () => {
   await fetchGameData();
-}
+};
 
 // Fin du jeu
 const endGame = (result) => {
   gameOver.value = true;
   gameResult.value = result;
-}
+};
 
 // Décrémente le nombre restant si on trouve un personnage correct
 const decrementRemaining = () => {
@@ -61,8 +58,9 @@ const decrementRemaining = () => {
   if (remainingToFind.value <= 0) {
     endGame("win");
   }
-}
+};
 </script>
+
 
 <template>
   <header>

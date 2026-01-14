@@ -17,6 +17,10 @@
     <rdfs:Class rdf:about="m2:Continent"/>
     <rdfs:Class rdf:about="m2:Epoque"/>
     <rdfs:Class rdf:about="m2:Profession"/>
+    <rdfs:Class rdf:about="m2:Mort"/>
+    <rdfs:Class rdf:about="m2:Religion"/>
+    <rdfs:Class rdf:about="m2:VecuEnMemeTempsQue"/>
+
 
     <!-- ===================== -->
     <!-- SOUS-CLASSES -->
@@ -342,6 +346,8 @@
         <m2:aVecuEnMemeTempsQue rdf:resource="m2:NikolaTesla"/>
         <m2:aVecuEnMemeTempsQue rdf:resource="m2:MartinLutherKingJr"/>
         <m2:aVecuEnMemeTempsQue rdf:resource="m2:AnneFrank"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:MarieCurie"/>
+        </m2:aVecuEnMemeTempsQue rdf:resource="m2:WinstonChurchill"/>
     </rdf:Description>
 
     <rdf:Description rdf:about="m2:MartinLutherKingJr">
@@ -584,7 +590,7 @@
         <m2:aGenre rdf:resource="m2:Homme"/>
         <m2:aContinent rdf:resource="m2:Europe"/>
         <m2:aContinent rdf:resource="m2:Amérique"/>
-        <m2:aEpoque rdf:resource="m2:EpoqueModerne"/>
+        <m2:aEpoque rdf:resource="m2:Renaissance"/>
         <m2:aProfession rdf:resource="m2:Explorateur"/>
         <m2:aMort rdf:resource="m2:DécédéeDeCausesNaturelles"/>
         <m2:aReligion rdf:resource="m2:Christianisme"/>
@@ -738,6 +744,7 @@
         <m2:aEpoque rdf:resource="m2:EpoqueContemporaine"/>
         <m2:aProfession rdf:resource="m2:Président"/>
         <m2:aMort rdf:resource="m2:Assassinée"/>
+        <m2:aReligion rdf:resource="m2:Christianisme"/>
     </rdf:Description>
 
     <rdf:Description rdf:about="m2:Attila">
