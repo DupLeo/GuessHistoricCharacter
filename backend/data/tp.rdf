@@ -1,0 +1,783 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:m2="https://m2.fr/rdf#"
+
+>
+
+    <!-- ===================== -->
+    <!-- CLASSES PRINCIPALES -->
+    <!-- ===================== -->
+
+    <rdfs:Class rdf:about="m2:Personne"/>
+    <rdfs:Class rdf:about="m2:Genre"/>
+    <rdfs:Class rdf:about="m2:Continent"/>
+    <rdfs:Class rdf:about="m2:Epoque"/>
+    <rdfs:Class rdf:about="m2:Profession"/>
+
+    <!-- ===================== -->
+    <!-- SOUS-CLASSES -->
+    <!-- ===================== -->
+
+    <!-- Genre -->
+    <rdfs:Class rdf:about="m2:Homme">
+        <rdfs:subClassOf rdf:resource="m2:Genre"/>
+    </rdfs:Class>
+
+    <rdfs:Class rdf:about="m2:Femme">
+        <rdfs:subClassOf rdf:resource="m2:Genre"/>
+    </rdfs:Class>
+
+    <!-- Continent -->
+    <rdfs:Class rdf:about="m2:Europe">
+        <rdfs:subClassOf rdf:resource="m2:Continent"/>
+    </rdfs:Class>
+
+    <rdfs:Class rdf:about="m2:Amérique">
+        <rdfs:subClassOf rdf:resource="m2:Continent"/>
+    </rdfs:Class>
+
+    <rdfs:Class rdf:about="m2:Asie">
+        <rdfs:subClassOf rdf:resource="m2:Continent"/>
+    </rdfs:Class>
+
+    <rdfs:Class rdf:about="m2:Afrique">
+        <rdfs:subClassOf rdf:resource="m2:Continent"/>
+    </rdfs:Class>
+
+    <!-- Époques -->
+    <rdfs:Class rdf:about="m2:Antiquité">
+        <rdfs:subClassOf rdf:resource="m2:Epoque"/>
+    </rdfs:Class>
+
+    <rdfs:Class rdf:about="m2:MoyenAge">
+        <rdfs:subClassOf rdf:resource="m2:Epoque"/>
+    </rdfs:Class>
+
+    <rdfs:Class rdf:about="m2:Renaissance">
+        <rdfs:subClassOf rdf:resource="m2:Epoque"/>
+    </rdfs:Class>
+
+    <rdfs:Class rdf:about="m2:EpoqueModerne">
+        <rdfs:subClassOf rdf:resource="m2:Epoque"/>
+    </rdfs:Class>
+
+    <rdfs:Class rdf:about="m2:EpoqueContemporaine">
+        <rdfs:subClassOf rdf:resource="m2:Epoque"/>
+    </rdfs:Class>
+
+    <!-- Mort -->
+    <rdfs:Class rdf:about="m2:Assassinée">
+        <rdfs:subClassOf rdf:resource="m2:Mort"/>
+    </rdfs:Class>
+
+    <rdfs:Class rdf:about="m2:DécédéeDeCausesNaturelles">
+        <rdfs:subClassOf rdf:resource="m2:Mort"/>
+    </rdfs:Class>
+
+    <rdfs:Class rdf:about="m2:MortAuCombat">
+        <rdfs:subClassOf rdf:resource="m2:Mort"/>
+    </rdfs:Class>
+
+    <rdfs:Class rdf:about="m2:Exécutée">
+        <rdfs:subClassOf rdf:resource="m2:Mort"/>
+    </rdfs:Class>
+
+    <rdfs:Class rdf:about="m2:Suicide">
+        <rdfs:subClassOf rdf:resource="m2:Mort"/>
+    </rdfs:Class>
+
+    <!-- Religion -->
+    <rdfs:Class rdf:about="m2:Monothéisme">
+        <rdfs:subClassOf rdf:resource="m2:Religion"/>
+    </rdfs:Class>
+
+    <rdfs:Class rdf:about="m2:Confucianisme">
+        <rdfs:subClassOf rdf:resource="m2:Religion"/>   
+    </rdfs:Class>
+
+    <rdfs:Class rdf:about="m2:Polythéisme">
+        <rdfs:subClassOf rdf:resource="m2:Religion"/>
+    </rdfs:Class>
+
+    <rdfs:Class rdf:about="m2:Egyptianisme">
+        <rdfs:subClassOf rdf:resource="m2:Polythéisme"/>
+    </rdfs:Class>
+
+    <rdfs:Class rdf:about="m2:GrecoRomanisme">
+        <rdfs:subClassOf rdf:resource="m2:Polythéisme"/>
+    </rdfs:Class>
+
+    <rdfs:Class rdf:about="m2:Christianisme">
+        <rdfs:subClassOf rdf:resource="m2:Monothéisme"/>
+    </rdfs:Class>
+
+    <rdfs:Class rdf:about="m2:Catholicisme">
+        <rdfs:subClassOf rdf:resource="m2:Christianisme"/>
+    </rdfs:Class>
+
+    <rdfs:Class rdf:about="m2:Protestantisme">
+        <rdfs:subClassOf rdf:resource="m2:Christianisme"/>
+    </rdfs:Class>
+
+    <rdfs:Class rdf:about="m2:Islam">
+        <rdfs:subClassOf rdf:resource="m2:Monothéisme"/>
+    </rdfs:Class>
+
+    <rdfs:Class rdf:about="m2:Judaïsme">
+        <rdfs:subClassOf rdf:resource="m2:Monothéisme"/>
+    </rdfs:Class>
+
+    <!-- Professions -->
+    <rdfs:Class rdf:about="m2:Politique">
+        <rdfs:subClassOf rdf:resource="m2:Profession"/>
+    </rdfs:Class>
+
+    <rdfs:Class rdf:about="m2:Noble">
+        <rdfs:subClassOf rdf:resource="m2:Politique"/>
+    </rdfs:Class>
+
+    <rdfs:Class rdf:about="m2:Roi/Reine">
+        <rdfs:subClassOf rdf:resource="m2:Noble"/>
+    </rdfs:Class>
+
+    <rdfs:Class rdf:about="m2:Empereur/Impératrice">
+        <rdfs:subClassOf rdf:resource="m2:Noble"/>
+    </rdfs:Class>
+
+    <rdfs:Class rdf:about="m2:Président">
+        <rdfs:subClassOf rdf:resource="m2:Politique"/>
+    </rdfs:Class>
+
+    <rdfs:Class rdf:about="m2:Dictateur">
+        <rdfs:subClassOf rdf:resource="m2:Politique"/>
+    </rdfs:Class>
+
+    <rdfs:Class rdf:about="m2:Militant">
+        <rdfs:subClassOf rdf:resource="m2:Politique"/>
+    </rdfs:Class>
+
+    <rdfs:Class rdf:about="m2:Scientifique">
+        <rdfs:subClassOf rdf:resource="m2:Profession"/>
+    </rdfs:Class>
+
+    <rdfs:Class rdf:about="m2:guerrier">
+        <rdfs:subClassOf rdf:resource="m2:Profession"/>
+    </rdfs:Class>
+
+    <rdfs:Class rdf:about="m2:Explorateur">
+        <rdfs:subClassOf rdf:resource="m2:Profession"/>
+    </rdfs:Class>
+
+    <rdfs:Class rdf:about="m2:Philosophe">
+        <rdfs:subClassOf rdf:resource="m2:Profession"/>
+    </rdfs:Class>
+
+    <rdfs:Class rdf:about="m2:Artiste">
+        <rdfs:subClassOf rdf:resource="m2:Profession"/>
+    </rdfs:Class>
+
+    <rdfs:Class rdf:about="m2:Peintre">
+        <rdfs:subClassOf rdf:resource="m2:Artiste"/>
+    </rdfs:Class>
+
+    <rdfs:Class rdf:about="m2:Styliste">
+        <rdfs:subClassOf rdf:resource="m2:Artiste"/>
+    </rdfs:Class>
+
+    <rdfs:Class rdf:about="m2:Poète">
+        <rdfs:subClassOf rdf:resource="m2:Artiste"/>
+    </rdfs:Class>
+
+    <rdfs:Class rdf:about="m2:Chanteur">
+        <rdfs:subClassOf rdf:resource="m2:Artiste"/>
+    </rdfs:Class>
+
+    <rdfs:Class rdf:about="m2:Dramaturge">
+        <rdfs:subClassOf rdf:resource="m2:Artiste"/>
+    </rdfs:Class>
+
+    <rdfs:Class rdf:about="m2:Ecrivain">
+        <rdfs:subClassOf rdf:resource="m2:Artiste"/>
+    </rdfs:Class>
+
+    <rdfs:Class rdf:about="m2:Pays">
+        <rdfs:subClassOf rdf:resource="m2:Conflit"/>
+    </rdfs:Class>
+
+    <!-- ===================== -->
+    <!-- PROPRIÉTÉS -->
+    <!-- ===================== -->
+
+    <rdf:Property rdf:about="m2:aGenre">
+        <rdfs:domain rdf:resource="m2:Personne"/>
+        <rdfs:range rdf:resource="m2:Genre"/>
+    </rdf:Property>
+
+    <rdf:Property rdf:about="m2:aContinent">
+        <rdfs:domain rdf:resource="m2:Personne"/>
+        <rdfs:range rdf:resource="m2:Continent"/>
+    </rdf:Property>
+
+    <rdf:Property rdf:about="m2:aEpoque">
+        <rdfs:domain rdf:resource="m2:Personne"/>
+        <rdfs:range rdf:resource="m2:Epoque"/>
+    </rdf:Property>
+
+    <rdf:Property rdf:about="m2:aProfession">
+        <rdfs:domain rdf:resource="m2:Personne"/>
+        <rdfs:range rdf:resource="m2:Profession"/>
+    </rdf:Property>
+
+    <rdf:Property rdf:about="m2:aMort">
+        <rdfs:domain rdf:resource="m2:Personne"/>
+        <rdfs:range rdf:resource="m2:Mort"/>
+    </rdf:Property>
+
+    <rdf:Property rdf:about="m2:aReligion">
+        <rdfs:domain rdf:resource="m2:Personne"/>
+        <rdfs:range rdf:resource="m2:Religion"/>
+    </rdf:Property>
+
+    <rdf:Property rdf:about="m2:aVecuEnMemeTempsQue">
+        <rdfs:domain rdf:resource="m2:Personne"/>
+        <rdfs:range rdf:resource="m2:Personne"/>
+    </rdf:Property>
+
+    <!-- ===================== -->
+    <!-- INDIVIDUS -->
+    <!-- ===================== -->
+
+    <rdf:Description rdf:about="m2:LeonardDeVinci">
+        <foaf:name>Léonard de Vinci</foaf:name>
+        <m2:aGenre rdf:resource="m2:Homme"/>
+        <m2:aContinent rdf:resource="m2:Europe"/>
+        <m2:aEpoque rdf:resource="m2:Renaissance"/>
+        <m2:aProfession rdf:resource="m2:Artiste"/>
+        <m2:aProfession rdf:resource="m2:Scientifique"/>
+        <m2:aMort rdf:resource="m2:DécédéeDeCausesNaturelles"/>
+        <m2:aReligion rdf:resource="m2:Christianisme"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="m2:Cleopatre">
+        <foaf:name>Cléopâtre</foaf:name>
+        <m2:aGenre rdf:resource="m2:Femme"/>
+        <m2:aContinent rdf:resource="m2:Afrique"/>
+        <m2:aEpoque rdf:resource="m2:Antiquité"/>
+        <m2:aProfession rdf:resource="m2:Roi/Reine"/>
+        <m2:aMort rdf:resource="m2:Suicide"/>
+        <m2:aReligion rdf:resource="m2:Egyptianisme"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="m2:AlbertEinstein">
+        <foaf:name>Albert Einstein</foaf:name>
+        <m2:aGenre rdf:resource="m2:Homme"/>
+        <m2:aContinent rdf:resource="m2:Europe"/>
+        <m2:aEpoque rdf:resource="m2:EpoqueContemporaine"/>
+        <m2:aProfession rdf:resource="m2:Scientifique"/>
+        <m2:aMort rdf:resource="m2:DécédéeDeCausesNaturelles"/>
+        <m2:aReligion rdf:resource="m2:Judaisme"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:NikolaTesla"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:MartinLutherKingJr"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:FridaKahlo"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:Anne Frank"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:MarieCurie"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="m2:JaenneDArc">
+        <foaf:name>Jeanne d'Arc</foaf:name>
+        <m2:aGenre rdf:resource="m2:Femme"/>
+        <m2:aContinent rdf:resource="m2:Europe"/>
+        <m2:aEpoque rdf:resource="m2:MoyenAge"/>
+        <m2:aProfession rdf:resource="m2:guerrier"/>
+        <m2:aMort rdf:resource="m2:Exécutée"/>
+        <m2:aReligion rdf:resource="m2:Christianisme"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="m2:GengisKhan">
+        <foaf:name>Gengis Khan</foaf:name>
+        <m2:aGenre rdf:resource="m2:Homme"/>
+        <m2:aContinent rdf:resource="m2:Asie"/>
+        <m2:aEpoque rdf:resource="m2:MoyenAge"/>
+        <m2:aProfession rdf:resource="m2:Empereur/Impératrice"/>
+        <m2:aMort rdf:resource="m2:DécédéeDeCausesNaturelles"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:KulilKhan"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="m2:KulilKhan">
+        <foaf:name>Kubilai Khan</foaf:name>
+        <m2:aGenre rdf:resource="m2:Homme"/>
+        <m2:aContinent rdf:resource="m2:Asie"/>
+        <m2:aEpoque rdf:resource="m2:MoyenAge"/>
+        <m2:aProfession rdf:resource="m2:Empereur/Impératrice"/>
+        <m2:aMort rdf:resource="m2:DécédéeDeCausesNaturelles"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:MarcoPolo"/>
+        </m2:aVecuEnMemeTempsQue rdf:resource="m2:GengisKhan"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="m2:MarcoPolo">
+        <foaf:name>Marco Polo</foaf:name>
+        <m2:aGenre rdf:resource="m2:Homme"/>
+        <m2:aContinent rdf:resource="m2:Asie"/>
+        <m2:aContinent rdf:resource="m2:Europe"/>
+        <m2:aEpoque rdf:resource="m2:MoyenAge"/>
+        <m2:aProfession rdf:resource="m2:Explorateur"/>
+        <m2:aMort rdf:resource="m2:DécédéeDeCausesNaturelles"/>
+        <m2:aReligion rdf:resource="m2:Christianisme"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:KulilKhan"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="m2:FridaKahlo">
+        <foaf:name>Frida Kahlo</foaf:name>
+        <m2:aGenre rdf:resource="m2:Femme"/>
+        <m2:aContinent rdf:resource="m2:Amérique"/>
+        <m2:aEpoque rdf:resource="m2:EpoqueContemporaine"/>
+        <m2:aProfession rdf:resource="m2:Peintre"/>
+        <m2:aMort rdf:resource="m2:DécédéeDeCausesNaturelles"/>
+        <m2:aReligion rdf:resource="m2:Christianisme"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:AlbertEinstein"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:NikolaTesla"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:MartinLutherKingJr"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:Anne Frank"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="m2:MartinLutherKingJr">
+        <foaf:name>Martin Luther King Jr.</foaf:name>
+        <m2:aGenre rdf:resource="m2:Homme"/>
+        <m2:aContinent rdf:resource="m2:Amérique"/>
+        <m2:aEpoque rdf:resource="m2:EpoqueContemporaine"/>
+        <m2:aProfession rdf:resource="m2:Militant"/>
+        <m2:aMort rdf:resource="m2:Assassinée"/>
+        <m2:aReligion rdf:resource="m2:Christianisme"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:AlbertEinstein"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:Anne Frank"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:FridaKahlo"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:Marie Curie"/>
+
+    </rdf:Description>
+    
+    <rdf:Description rdf:about="m2:NikolaTesla">
+        <foaf:name>Nikola Tesla</foaf:name>
+        <m2:aGenre rdf:resource="m2:Homme"/>
+        <m2:aContinent rdf:resource="m2:Europe"/>
+        <m2:aContinent rdf:resource="m2:Amérique"/>
+        <m2:aEpoque rdf:resource="m2:EpoqueContemporaine"/>
+        <m2:aProfession rdf:resource="m2:Scientifique"/>
+        <m2:aMort rdf:resource="m2:DécédéeDeCausesNaturelles"/>
+        <m2:aReligion rdf:resource="m2:Christianisme"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:AlbertEinstein"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:Anne Frank"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:FridaKahlo"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:Marie Curie"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:MartinLutherKingJr"/>
+
+    </rdf:Description>
+
+    <rdf:Description rdf:about="m2:NapoleonBonaparte">
+        <foaf:name>Napoléon Bonaparte</foaf:name>
+        <m2:aGenre rdf:resource="m2:Homme"/>
+        <m2:aContinent rdf:resource="m2:Europe"/>
+        <m2:aEpoque rdf:resource="m2:EpoqueModerne"/>
+        <m2:aProfession rdf:resource="m2:Empereur/Impératrice"/>
+        <m2:aMort rdf:resource="m2:DécédéeDeCausesNaturelles"/>
+        <m2:aReligion rdf:resource="m2:Christianisme"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:GeorgeWashington"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:Marie-Antoinette"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="m2:Anne Frank">
+        <foaf:name>Anne Frank</foaf:name>
+        <m2:aGenre rdf:resource="m2:Femme"/>
+        <m2:aContinent rdf:resource="m2:Europe"/>
+        <m2:aEpoque rdf:resource="m2:EpoqueContemporaine"/>
+        <m2:aProfession rdf:resource="m2:Ecrivain"/>
+        <m2:aMort rdf:resource="m2:DécédéeDeCausesNaturelles"/>
+        <m2:aReligion rdf:resource="m2:Judaisme"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:AlbertEinstein"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:NikolaTesla"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:MartinLutherKingJr"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:FridaKahlo"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="m2:MarieCurie">
+        <foaf:name>Marie Curie</foaf:name>
+        <m2:aGenre rdf:resource="m2:Femme"/>
+        <m2:aContinent rdf:resource="m2:Europe"/>
+        <m2:aEpoque rdf:resource="m2:EpoqueContemporaine"/>
+        <m2:aProfession rdf:resource="m2:Scientifique"/>
+        <m2:aMort rdf:resource="m2:DécédéeDeCausesNaturelles"/>
+        <m2:aReligion rdf:resource="m2:Christianisme"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:AlbertEinstein"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:NikolaTesla"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:MartinLutherKingJr"/>  
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:FridaKahlo"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="m2:JulesCesar">
+        <foaf:name>César</foaf:name>
+        <m2:aGenre rdf:resource="m2:Homme"/>
+        <m2:aContinent rdf:resource="m2:Europe"/>
+        <m2:aEpoque rdf:resource="m2:Antiquité"/>
+        <m2:aProfession rdf:resource="m2:Politique"/>
+        <m2:aMort rdf:resource="m2:Assassinée"/>
+        <m2:aReligion rdf:resource="m2:GrecoRomanisme"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:Cleopatre"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:Vercingetorix"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="m2:Vercingetorix">
+        <foaf:name>Vercingétorix</foaf:name>
+        <m2:aGenre rdf:resource="m2:Homme"/>
+        <m2:aContinent rdf:resource="m2:Europe"/>
+        <m2:aEpoque rdf:resource="m2:Antiquité"/>
+        <m2:aProfession rdf:resource="m2:guerrier"/>
+        <m2:aMort rdf:resource="m2:Exécutée"/>
+        <m2:aReligion rdf:resource="m2:Polytheisme"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:César"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:Cleopatre"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="m2:AlexandreLeGrand">
+        <foaf:name>Alexandre le Grand</foaf:name>
+        <m2:aGenre rdf:resource="m2:Homme"/>
+        <m2:aContinent rdf:resource="m2:Europe"/>
+        <m2:aEpoque rdf:resource="m2:Antiquité"/>
+        <m2:aProfession rdf:resource="m2:guerrier"/>
+        <m2:aProfession rdf:resource="m2:Roi/Reine"/>
+        <m2:aMort rdf:resource="m2:DécédéeDeCausesNaturelles"/>
+        <m2:aReligion rdf:resource="m2:GrecoRomanisme"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:Aristote"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="m2:QinShiHuang">
+        <foaf:name>Qin Shi Huang</foaf:name>
+        <m2:aGenre rdf:resource="m2:Homme"/>
+        <m2:aContinent rdf:resource="m2:Asie"/>
+        <m2:aEpoque rdf:resource="m2:Antiquité"/>
+        <m2:aProfession rdf:resource="m2:Roi/Reine"/>
+        <m2:aMort rdf:resource="m2:DécédéeDeCausesNaturelles"/>
+        <m2:aReligion rdf:resource="m2:Polytheisme"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="m2:WilliamShakespeare">
+        <foaf:name>William Shakespeare</foaf:name>
+        <m2:aGenre rdf:resource="m2:Homme"/>
+        <m2:aContinent rdf:resource="m2:Europe"/>
+        <m2:aEpoque rdf:resource="m2:Renaissance"/>
+        <m2:aProfession rdf:resource="m2:Poète"/>
+        <m2:aProfession rdf:resource="m2:Dramaturge"/>
+        <m2:aMort rdf:resource="m2:DécédéeDeCausesNaturelles"/>
+        <m2:aReligion rdf:resource="m2:Christianisme"/>
+
+    <rdf:Description rdf:about="m2:SunTzu">
+        <foaf:name>Sun Tzu</foaf:name>
+        <m2:aGenre rdf:resource="m2:Homme"/>
+        <m2:aContinent rdf:resource="m2:Asie"/>
+        <m2:aEpoque rdf:resource="m2:Antiquité"/>
+        <m2:aProfession rdf:resource="m2:Philosophe"/>
+        <m2:aMort rdf:resource="m2:DécédéeDeCausesNaturelles"/>
+        <m2:aReligion rdf:resource="m2:Polytheisme"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="m2:Pythagore">
+        <foaf:name>Pythagore</foaf:name>
+        <m2:aGenre rdf:resource="m2:Homme"/>
+        <m2:aContinent rdf:resource="m2:Europe"/>
+        <m2:aEpoque rdf:resource="m2:Antiquité"/>
+        <m2:aProfession rdf:resource="m2:Philosophe"/>
+        <m2:aMort rdf:resource="m2:DécédéeDeCausesNaturelles"/>
+        <m2:aReligion rdf:resource="m2:Polytheisme"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="m2:MarieAntoinette">
+        <foaf:name>Marie-Antoinette</foaf:name>
+        <m2:aGenre rdf:resource="m2:Femme"/>
+        <m2:aContinent rdf:resource="m2:Europe"/>
+        <m2:aEpoque rdf:resource="m2:EpoqueModerne"/>
+        <m2:aProfession rdf:resource="m2:Roi/Reine"/>
+        <m2:aMort rdf:resource="m2:Exécutée"/>
+        <m2:aReligion rdf:resource="m2:Christianisme"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:NapoleonBonaparte"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:GeorgeWashington"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="m2:CatherineDeMedici">
+        <foaf:name>Catherine de Médicis</foaf:name>
+        <m2:aGenre rdf:resource="m2:Femme"/>
+        <m2:aContinent rdf:resource="m2:Europe"/>
+        <m2:aEpoque rdf:resource="m2:Renaissance"/>
+        <m2:aProfession rdf:resource="m2:Roi/Reine"/>
+        <m2:aMort rdf:resource="m2:DécédéeDeCausesNaturelles"/>
+        <m2:aReligion rdf:resource="m2:Christianisme"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="m2:IsaacNewton">
+        <foaf:name>Isaac Newton</foaf:name>
+        <m2:aGenre rdf:resource="m2:Homme"/>
+        <m2:aContinent rdf:resource="m2:Europe"/>
+        <m2:aEpoque rdf:resource="m2:EpoqueModerne"/>
+        <m2:aProfession rdf:resource="m2:Scientifique"/>
+        <m2:aMort rdf:resource="m2:DécédéeDeCausesNaturelles"/>
+        <m2:aReligion rdf:resource="m2:Christianisme"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="m2:Molière">
+        <foaf:name>Molière</foaf:name>
+        <m2:aGenre rdf:resource="m2:Homme"/>
+        <m2:aContinent rdf:resource="m2:Europe"/>
+        <m2:aEpoque rdf:resource="m2:EpoqueModerne"/>
+        <m2:aProfession rdf:resource="m2:Poète"/>
+        <m2:aProfession rdf:resource="m2:Dramaturge"/>
+        <m2:aMort rdf:resource="m2:DécédéeDeCausesNaturelles"/>
+        <m2:aReligion rdf:resource="m2:Christianisme"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="m2:GalileoGalilei">
+        <foaf:name>Galilée</foaf:name>
+        <m2:aGenre rdf:resource="m2:Homme"/>
+        <m2:aContinent rdf:resource="m2:Europe"/>
+        <m2:aEpoque rdf:resource="m2:EpoqueModerne"/>
+        <m2:aProfession rdf:resource="m2:Scientifique"/>
+        <m2:aMort rdf:resource="m2:DécédéeDeCausesNaturelles"/>
+        <m2:aReligion rdf:resource="m2:Christianisme"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="m2:NelsonMandela">
+        <foaf:name>Nelson Mandela</foaf:name>
+        <m2:aGenre rdf:resource="m2:Homme"/>
+        <m2:aContinent rdf:resource="m2:Afrique"/>
+        <m2:aEpoque rdf:resource="m2:EpoqueContemporaine"/>
+        <m2:aProfession rdf:resource="m2:Militant"/>
+        <m2:aProfession rdf:resource="m2:Président"/>
+        <m2:aMort rdf:resource="m2:DécédéeDeCausesNaturelles"/>
+        <m2:aReligion rdf:resource="m2:Christianisme"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="m2:GeorgeWashington">
+        <foaf:name>George Washington</foaf:name>
+        <m2:aGenre rdf:resource="m2:Homme"/>
+        <m2:aContinent rdf:resource="m2:Amérique"/>
+        <m2:aEpoque rdf:resource="m2:EpoqueModerne"/>
+        <m2:aProfession rdf:resource="m2:Président"/>
+        <m2:aMort rdf:resource="m2:DécédéeDeCausesNaturelles"/>
+        <m2:aReligion rdf:resource="m2:Christianisme"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:NapoleonBonaparte"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:Marie-Antoinette"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="m2:Confucius">
+        <foaf:name>Confucius</foaf:name>
+        <m2:aGenre rdf:resource="m2:Homme"/>
+        <m2:aContinent rdf:resource="m2:Asie"/>
+        <m2:aEpoque rdf:resource="m2:Antiquité"/>
+        <m2:aProfession rdf:resource="m2:Philosophe"/>
+        <m2:aMort rdf:resource="m2:DécédéeDeCausesNaturelles"/>
+        <m2:aReligion rdf:resource="m2:Polytheisme"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="m2:ChristopherColumbus">
+        <foaf:name>Christophe Colomb</foaf:name>
+        <m2:aGenre rdf:resource="m2:Homme"/>
+        <m2:aContinent rdf:resource="m2:Europe"/>
+        <m2:aContinent rdf:resource="m2:Amérique"/>
+        <m2:aEpoque rdf:resource="m2:EpoqueModerne"/>
+        <m2:aProfession rdf:resource="m2:Explorateur"/>
+        <m2:aMort rdf:resource="m2:DécédéeDeCausesNaturelles"/>
+        <m2:aReligion rdf:resource="m2:Christianisme"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="m2:Géronimo">
+        <foaf:name>Géronimo</foaf:name>
+        <m2:aGenre rdf:resource="m2:Homme"/>
+        <m2:aContinent rdf:resource="m2:Amérique"/>
+        <m2:aEpoque rdf:resource="m2:EpoqueModerne"/>
+        <m2:aProfession rdf:resource="m2:Militant"/>
+        <m2:aMort rdf:resource="m2:DécédéeDeCausesNaturelles"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="m2:Aristote">
+        <foaf:name>Aristote</foaf:name>
+        <m2:aGenre rdf:resource="m2:Homme"/>
+        <m2:aContinent rdf:resource="m2:Europe"/>
+        <m2:aEpoque rdf:resource="m2:Antiquité"/>
+        <m2:aProfession rdf:resource="m2:Philosophe"/>
+        <m2:aMort rdf:resource="m2:DécédéeDeCausesNaturelles"/>
+        <m2:aReligion rdf:resource="m2:GrecoRomanisme"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:AlexandreLeGrand"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="m2:Toutankhamon">
+    <foaf:name>Toutânkhamon</foaf:name>
+    <m2:aGenre rdf:resource="m2:Homme"/>
+    <m2:aContinent rdf:resource="m2:Afrique"/>
+    <m2:aEpoque rdf:resource="m2:Antiquité"/>
+    <m2:aProfession rdf:resource="m2:Roi/Reine"/>
+    <m2:aMort rdf:resource="m2:DécédéeDeCausesNaturelles"/>
+    <m2:aReligion rdf:resource="m2:Egyptianisme"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="m2:MichelAnge">
+        <foaf:name>Michel-Ange</foaf:name>
+        <m2:aGenre rdf:resource="m2:Homme"/>
+        <m2:aContinent rdf:resource="m2:Europe"/>
+        <m2:aEpoque rdf:resource="m2:Renaissance"/>
+        <m2:aProfession rdf:resource="m2:Peintre"/>
+        <m2:aProfession rdf:resource="m2:Sculpteur"/>
+        <m2:aMort rdf:resource="m2:DécédéeDeCausesNaturelles"/>
+        <m2:aReligion rdf:resource="m2:Christianisme"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:LeonardDeVinci"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:CatherineDeMedici"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="m2:JosephStaline">
+        <foaf:name>Joseph Staline</foaf:name>
+        <m2:aGenre rdf:resource="m2:Homme"/>
+        <m2:aContinent rdf:resource="m2:Europe"/>
+        <m2:aContinent rdf:resource="m2:Asie"/>
+        <m2:aEpoque rdf:resource="m2:EpoqueContemporaine"/>
+        <m2:aProfession rdf:resource="m2:Politique"/>
+        <m2:aProfession rdf:resource="m2:Président"/>
+        <m2:aMort rdf:resource="m2:DécédéeDeCausesNaturelles"/>
+        <m2:aReligion rdf:resource="m2:Christianisme"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:AdolfHitler"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:MaoZedong"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="m2:AdolfHitler">
+        <foaf:name>Adolf Hitler</foaf:name>
+        <m2:aGenre rdf:resource="m2:Homme"/>
+        <m2:aContinent rdf:resource="m2:Europe"/>
+        <m2:aEpoque rdf:resource="m2:EpoqueContemporaine"/>
+        <m2:aProfession rdf:resource="m2:Politique"/>
+        <m2:aMort rdf:resource="m2:Suicide"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:JosephStaline"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="m2:MaoZedong">
+        <foaf:name>Mao Zedong</foaf:name>
+        <m2:aGenre rdf:resource="m2:Homme"/>
+        <m2:aContinent rdf:resource="m2:Asie"/>
+        <m2:aEpoque rdf:resource="m2:EpoqueContemporaine"/>
+        <m2:aProfession rdf:resource="m2:Politique"/>
+        <m2:aMort rdf:resource="m2:DécédéeDeCausesNaturelles"/>
+        <m2:aReligion rdf:resource="m2:Confucianisme"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:JosephStaline"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="m2:SolimanLeMagnifique">
+        <foaf:name>Soliman le Magnifique</foaf:name>
+        <m2:aGenre rdf:resource="m2:Homme"/>
+        <m2:aContinent rdf:resource="m2:Asie"/>
+        <m2:aEpoque rdf:resource="m2:Renaissance"/>
+        <m2:aProfession rdf:resource="m2:Roi/Reine"/>
+        <m2:aMort rdf:resource="m2:DécédéeDeCausesNaturelles"/>
+        <m2:aReligion rdf:resource="m2:Islam"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="m2:JulesFerry">
+        <foaf:name>Jules Ferry</foaf:name>
+        <m2:aGenre rdf:resource="m2:Homme"/>
+        <m2:aContinent rdf:resource="m2:Europe"/>
+        <m2:aEpoque rdf:resource="m2:EpoqueContemporaine"/>
+        <m2:aProfession rdf:resource="m2:Politique"/>
+        <m2:aMort rdf:resource="m2:DécédéeDeCausesNaturelles"/>
+        <m2:aReligion rdf:resource="m2:Christianisme"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="m2:Copernic">
+        <foaf:name>Copernic</foaf:name>
+        <m2:aGenre rdf:resource="m2:Homme"/>
+        <m2:aContinent rdf:resource="m2:Europe"/>
+        <m2:aEpoque rdf:resource="m2:Renaissance"/>
+        <m2:aProfession rdf:resource="m2:Scientifique"/>
+        <m2:aMort rdf:resource="m2:DécédéeDeCausesNaturelles"/>
+        <m2:aReligion rdf:resource="m2:Christianisme"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="m2:Neron">
+        <foaf:name>Néron</foaf:name>
+        <m2:aGenre rdf:resource="m2:Homme"/>
+        <m2:aContinent rdf:resource="m2:Europe"/>
+        <m2:aEpoque rdf:resource="m2:Antiquité"/>
+        <m2:aProfession rdf:resource="m2:Roi/Reine"/>
+        <m2:aMort rdf:resource="m2:Suicide"/>
+        <m2:aReligion rdf:resource="m2:GrecoRomanisme"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="m2:Pericles">
+        <foaf:name>Périclès</foaf:name>
+        <m2:aGenre rdf:resource="m2:Homme"/>
+        <m2:aContinent rdf:resource="m2:Europe"/>
+        <m2:aEpoque rdf:resource="m2:Antiquité"/>
+        <m2:aProfession rdf:resource="m2:Politique"/>
+        <m2:aProfession rdf:resource="m2:Guerrier"/>
+        <m2:aMort rdf:resource="m2:DécédéeDeCausesNaturelles"/>
+        <m2:aReligion rdf:resource="m2:Polytheisme"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="m2:Auguste">
+        <foaf:name>Auguste</foaf:name>
+        <m2:aGenre rdf:resource="m2:Homme"/>
+        <m2:aContinent rdf:resource="m2:Europe"/>
+        <m2:aEpoque rdf:resource="m2:Antiquité"/>
+        <m2:aProfession rdf:resource="m2:Guerrier"/>
+        <m2:aProfession rdf:resource="m2:Roi/Reine"/>
+        <m2:aMort rdf:resource="m2:DécédéeDeCausesNaturelles"/>
+        <m2:aReligion rdf:resource="m2:GrecoRomanisme"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:JulesCesar"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="m2:AbrahamLincoln">
+        <foaf:name>Abraham Lincoln</foaf:name>
+        <m2:aGenre rdf:resource="m2:Homme"/>
+        <m2:aContinent rdf:resource="m2:Amérique"/>
+        <m2:aEpoque rdf:resource="m2:EpoqueContemporaine"/>
+        <m2:aProfession rdf:resource="m2:Président"/>
+        <m2:aMort rdf:resource="m2:Assassinée"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="m2:Attila">
+        <foaf:name>Attila</foaf:name>
+        <m2:aGenre rdf:resource="m2:Homme"/>
+        <m2:aContinent rdf:resource="m2:Europe"/>
+        <m2:aContinent rdf:resource="m2:Asie"/>
+        <m2:aEpoque rdf:resource="m2:Antiquité"/>
+        <m2:aProfession rdf:resource="m2:Guerrier"/>
+        <m2:aProfession rdf:resource="m2:Roi/Reine"/>
+        <m2:aMort rdf:resource="m2:DécédéeDeCausesNaturelles"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="m2:MansaMoussa">
+        <foaf:name>Mansa Moussa</foaf:name>
+        <m2:aGenre rdf:resource="m2:Homme"/>
+        <m2:aContinent rdf:resource="m2:Afrique"/>
+        <m2:aEpoque rdf:resource="m2:Antiquité"/>
+        <m2:aProfession rdf:resource="m2:Roi/Reine"/>
+        <m2:aMort rdf:resource="m2:DécédéeDeCausesNaturelles"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="m2:LeonTrotsky">
+        <foaf:name>Leon Trotsky</foaf:name>
+        <m2:aGenre rdf:resource="m2:Homme"/>
+        <m2:aContinent rdf:resource="m2:Europe"/>
+        <m2:aEpoque rdf:resource="m2:EpoqueContemporaine"/>
+        <m2:aProfession rdf:resource="m2:Politique"/>
+        <m2:aMort rdf:resource="m2:Assassinée"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:JosephStaline"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="m2:WinstonChurchill">
+        <foaf:name>Winston Churchill</foaf:name>
+        <m2:aGenre rdf:resource="m2:Homme"/>
+        <m2:aContinent rdf:resource="m2:Europe"/>
+        <m2:aEpoque rdf:resource="m2:EpoqueContemporaine"/>
+        <m2:aProfession rdf:resource="m2:Politique"/>
+        <m2:aMort rdf:resource="m2:DécédéeDeCausesNaturelles"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:JosephStaline"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:AdolfHitler"/>
+    </rdf:Description>
+
+</rdf:RDF>
