@@ -1,47 +1,142 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import { ref } from "vue";
+import Score from "./components/Score.vue";
+import ListePersonnage from "./components/ListePersonnage.vue";
+
+// État du jeu
+const gameData = ref(null);
+const loading = ref(false);
+const gameOver = ref(false);
+const gameResult = ref(""); // "win" ou "lose"
+
+// Nombre de jokers max
+const maxJokers = 2;
+const jokersRemaining = ref(maxJokers);
+
+// Nombre de personnages restants à trouver
+const remainingToFind = ref(0);
+
+// Simule un fetch de données
+const fetchGameData = async () => {
+  loading.value = true;
+  gameOver.value = false;
+  gameResult.value = "";
+  jokersRemaining.value = maxJokers;
+
+  await new Promise(r => setTimeout(r, 500)); // délai simulé
+
+  gameData.value = {
+    personnages: [
+      { id: 1, name: "Napoléon Bonaparte" },
+      { id: 2, name: "Cléopâtre" },
+      { id: 3, name: "Albert Einstein" },
+      { id: 4, name: "Marie Curie" }
+    ],
+    indices: [0, 3],
+    indiceText: "Europe"
+  }
+
+  remainingToFind.value = gameData.value.indices.length;
+
+  loading.value = false;
+}
+
+// Initialisation
+fetchGameData();
+
+// Reset du jeu
+const resetGame = async () => {
+  await fetchGameData();
+}
+
+// Fin du jeu
+const endGame = (result) => {
+  gameOver.value = true;
+  gameResult.value = result;
+}
+
+// Décrémente le nombre restant si on trouve un personnage correct
+const decrementRemaining = () => {
+  remainingToFind.value--;
+  if (remainingToFind.value <= 0) {
+    endGame("win");
+  }
+}
 </script>
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
+    <Score v-if="gameData" :indice="gameData.indiceText" :nombre="remainingToFind" :jokers="jokersRemaining"
+      @reset="resetGame" />
   </header>
 
   <main>
-    <TheWelcome />
+    <div v-if="loading">Chargement des données...</div>
+
+    <ListePersonnage v-if="gameData && !gameOver" :gameData="gameData" :jokersRemaining="jokersRemaining"
+      @update-jokers="val => jokersRemaining = val" @found-correct="decrementRemaining" @game-over="endGame" />
+
+    <div v-if="gameOver" class="end-screen">
+      <h2 v-if="gameResult === 'win'">🎉 Vous avez gagné ! 🎉</h2>
+      <h2 v-else>❌ Vous avez perdu ! ❌</h2>
+      <button class="restart-btn" @click="resetGame">🔄 Recommencer</button>
+    </div>
   </main>
 </template>
 
+
 <style scoped>
+.app-container {
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 header {
-  line-height: 1.5;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #ffffffee;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  flex-direction: column;
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
+.loading {
+  font-size: 1.5rem;
+  color: #1976d2;
+}
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
+.end-screen {
+  text-align: center;
+}
 
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+.end-screen h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #1976d2;
+}
+
+.restart-btn {
+  font-size: 1.2rem;
+  padding: 0.75rem 1.5rem;
+  background: #1976d2;
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: 0.2s all;
+}
+
+.restart-btn:hover {
+  background: #115293;
 }
 </style>
