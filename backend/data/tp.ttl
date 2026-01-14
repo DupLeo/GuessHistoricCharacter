@@ -1,0 +1,661 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ns0: <https://m2.fr/rdf#> .
+
+<m2:Personne> a rdfs:Class .
+<m2:Genre> a rdfs:Class .
+<m2:Continent> a rdfs:Class .
+<m2:Epoque> a rdfs:Class .
+<m2:Profession> a rdfs:Class .
+<m2:Homme>
+    a rdfs:Class ;
+    rdfs:subClassOf <m2:Genre> .
+
+<m2:Femme>
+    a rdfs:Class ;
+    rdfs:subClassOf <m2:Genre> .
+
+<m2:Europe>
+    a rdfs:Class ;
+    rdfs:subClassOf <m2:Continent> .
+
+<m2:Amérique>
+    a rdfs:Class ;
+    rdfs:subClassOf <m2:Continent> .
+
+<m2:Asie>
+    a rdfs:Class ;
+    rdfs:subClassOf <m2:Continent> .
+
+<m2:Afrique>
+    a rdfs:Class ;
+    rdfs:subClassOf <m2:Continent> .
+
+<m2:Antiquité>
+    a rdfs:Class ;
+    rdfs:subClassOf <m2:Epoque> .
+
+<m2:MoyenAge>
+    a rdfs:Class ;
+    rdfs:subClassOf <m2:Epoque> .
+
+<m2:Renaissance>
+    a rdfs:Class ;
+    rdfs:subClassOf <m2:Epoque> .
+
+<m2:EpoqueModerne>
+    a rdfs:Class ;
+    rdfs:subClassOf <m2:Epoque> .
+
+<m2:EpoqueContemporaine>
+    a rdfs:Class ;
+    rdfs:subClassOf <m2:Epoque> .
+
+<m2:Assassinée>
+    a rdfs:Class ;
+    rdfs:subClassOf <m2:Mort> .
+
+<m2:DécédéeDeCausesNaturelles>
+    a rdfs:Class ;
+    rdfs:subClassOf <m2:Mort> .
+
+<m2:MortAuCombat>
+    a rdfs:Class ;
+    rdfs:subClassOf <m2:Mort> .
+
+<m2:Exécutée>
+    a rdfs:Class ;
+    rdfs:subClassOf <m2:Mort> .
+
+<m2:Suicide>
+    a rdfs:Class ;
+    rdfs:subClassOf <m2:Mort> .
+
+<m2:Monothéisme>
+    a rdfs:Class ;
+    rdfs:subClassOf <m2:Religion> .
+
+<m2:Confucianisme>
+    a rdfs:Class ;
+    rdfs:subClassOf <m2:Religion> .
+
+<m2:Polythéisme>
+    a rdfs:Class ;
+    rdfs:subClassOf <m2:Religion> .
+
+<m2:Egyptianisme>
+    a rdfs:Class ;
+    rdfs:subClassOf <m2:Polythéisme> .
+
+<m2:GrecoRomanisme>
+    a rdfs:Class ;
+    rdfs:subClassOf <m2:Polythéisme> .
+
+<m2:Christianisme>
+    a rdfs:Class ;
+    rdfs:subClassOf <m2:Monothéisme> .
+
+<m2:Catholicisme>
+    a rdfs:Class ;
+    rdfs:subClassOf <m2:Christianisme> .
+
+<m2:Protestantisme>
+    a rdfs:Class ;
+    rdfs:subClassOf <m2:Christianisme> .
+
+<m2:Islam>
+    a rdfs:Class ;
+    rdfs:subClassOf <m2:Monothéisme> .
+
+<m2:Judaïsme>
+    a rdfs:Class ;
+    rdfs:subClassOf <m2:Monothéisme> .
+
+<m2:Politique>
+    a rdfs:Class ;
+    rdfs:subClassOf <m2:Profession> .
+
+<m2:Noble>
+    a rdfs:Class ;
+    rdfs:subClassOf <m2:Politique> .
+
+<m2:Roi/Reine>
+    a rdfs:Class ;
+    rdfs:subClassOf <m2:Noble> .
+
+<m2:Empereur/Impératrice>
+    a rdfs:Class ;
+    rdfs:subClassOf <m2:Noble> .
+
+<m2:Président>
+    a rdfs:Class ;
+    rdfs:subClassOf <m2:Politique> .
+
+<m2:Dictateur>
+    a rdfs:Class ;
+    rdfs:subClassOf <m2:Politique> .
+
+<m2:Militant>
+    a rdfs:Class ;
+    rdfs:subClassOf <m2:Politique> .
+
+<m2:Scientifique>
+    a rdfs:Class ;
+    rdfs:subClassOf <m2:Profession> .
+
+<m2:guerrier>
+    a rdfs:Class ;
+    rdfs:subClassOf <m2:Profession> .
+
+<m2:Explorateur>
+    a rdfs:Class ;
+    rdfs:subClassOf <m2:Profession> .
+
+<m2:Philosophe>
+    a rdfs:Class ;
+    rdfs:subClassOf <m2:Profession> .
+
+<m2:Artiste>
+    a rdfs:Class ;
+    rdfs:subClassOf <m2:Profession> .
+
+<m2:Peintre>
+    a rdfs:Class ;
+    rdfs:subClassOf <m2:Artiste> .
+
+<m2:Styliste>
+    a rdfs:Class ;
+    rdfs:subClassOf <m2:Artiste> .
+
+<m2:Poète>
+    a rdfs:Class ;
+    rdfs:subClassOf <m2:Artiste> .
+
+<m2:Chanteur>
+    a rdfs:Class ;
+    rdfs:subClassOf <m2:Artiste> .
+
+<m2:Dramaturge>
+    a rdfs:Class ;
+    rdfs:subClassOf <m2:Artiste> .
+
+<m2:Ecrivain>
+    a rdfs:Class ;
+    rdfs:subClassOf <m2:Artiste> .
+
+<m2:Pays>
+    a rdfs:Class ;
+    rdfs:subClassOf <m2:Conflit> .
+
+<m2:aGenre>
+    a rdf:Property ;
+    rdfs:domain <m2:Personne> ;
+    rdfs:range <m2:Genre> .
+
+<m2:aContinent>
+    a rdf:Property ;
+    rdfs:domain <m2:Personne> ;
+    rdfs:range <m2:Continent> .
+
+<m2:aEpoque>
+    a rdf:Property ;
+    rdfs:domain <m2:Personne> ;
+    rdfs:range <m2:Epoque> .
+
+<m2:aProfession>
+    a rdf:Property ;
+    rdfs:domain <m2:Personne> ;
+    rdfs:range <m2:Profession> .
+
+<m2:aMort>
+    a rdf:Property ;
+    rdfs:domain <m2:Personne> ;
+    rdfs:range <m2:Mort> .
+
+<m2:aReligion>
+    a rdf:Property ;
+    rdfs:domain <m2:Personne> ;
+    rdfs:range <m2:Religion> .
+
+<m2:aVecuEnMemeTempsQue>
+    a rdf:Property ;
+    rdfs:domain <m2:Personne> ;
+    rdfs:range <m2:Personne> .
+
+<m2:LeonardDeVinci>
+    foaf:name "Léonard de Vinci" ;
+    ns0:aGenre <m2:Homme> ;
+    ns0:aContinent <m2:Europe> ;
+    ns0:aEpoque <m2:Renaissance> ;
+    ns0:aProfession <m2:Artiste>, <m2:Scientifique> ;
+    ns0:aMort <m2:DécédéeDeCausesNaturelles> ;
+    ns0:aReligion <m2:Christianisme> .
+
+<m2:Cleopatre>
+    foaf:name "Cléopâtre" ;
+    ns0:aGenre <m2:Femme> ;
+    ns0:aContinent <m2:Afrique> ;
+    ns0:aEpoque <m2:Antiquité> ;
+    ns0:aProfession <m2:Roi/Reine> ;
+    ns0:aMort <m2:Suicide> ;
+    ns0:aReligion <m2:Egyptianisme> .
+
+<m2:AlbertEinstein>
+    foaf:name "Albert Einstein" ;
+    ns0:aGenre <m2:Homme> ;
+    ns0:aContinent <m2:Europe> ;
+    ns0:aEpoque <m2:EpoqueContemporaine> ;
+    ns0:aProfession <m2:Scientifique> ;
+    ns0:aMort <m2:DécédéeDeCausesNaturelles> ;
+    ns0:aReligion <m2:Judaisme> ;
+    ns0:aVecuEnMemeTempsQue <m2:NikolaTesla>, <m2:MartinLutherKingJr>, <m2:FridaKahlo>, <m2:AnneFrank>, <m2:MarieCurie> .
+
+<m2:JaenneDArc>
+    foaf:name "Jeanne d'Arc" ;
+    ns0:aGenre <m2:Femme> ;
+    ns0:aContinent <m2:Europe> ;
+    ns0:aEpoque <m2:MoyenAge> ;
+    ns0:aProfession <m2:guerrier> ;
+    ns0:aMort <m2:Exécutée> ;
+    ns0:aReligion <m2:Christianisme> .
+
+<m2:GengisKhan>
+    foaf:name "Gengis Khan" ;
+    ns0:aGenre <m2:Homme> ;
+    ns0:aContinent <m2:Asie> ;
+    ns0:aEpoque <m2:MoyenAge> ;
+    ns0:aProfession <m2:Empereur/Impératrice> ;
+    ns0:aMort <m2:DécédéeDeCausesNaturelles> ;
+    ns0:aVecuEnMemeTempsQue <m2:KulilKhan> .
+
+<m2:KulilKhan>
+    foaf:name "Kubilai Khan" ;
+    ns0:aGenre <m2:Homme> ;
+    ns0:aContinent <m2:Asie> ;
+    ns0:aEpoque <m2:MoyenAge> ;
+    ns0:aProfession <m2:Empereur/Impératrice> ;
+    ns0:aMort <m2:DécédéeDeCausesNaturelles> ;
+    ns0:aVecuEnMemeTempsQue <m2:MarcoPolo>, <m2:GengisKhan> .
+
+<m2:MarcoPolo>
+    foaf:name "Marco Polo" ;
+    ns0:aGenre <m2:Homme> ;
+    ns0:aContinent <m2:Asie>, <m2:Europe> ;
+    ns0:aEpoque <m2:MoyenAge> ;
+    ns0:aProfession <m2:Explorateur> ;
+    ns0:aMort <m2:DécédéeDeCausesNaturelles> ;
+    ns0:aReligion <m2:Christianisme> ;
+    ns0:aVecuEnMemeTempsQue <m2:KulilKhan> .
+
+<m2:FridaKahlo>
+    foaf:name "Frida Kahlo" ;
+    ns0:aGenre <m2:Femme> ;
+    ns0:aContinent <m2:Amérique> ;
+    ns0:aEpoque <m2:EpoqueContemporaine> ;
+    ns0:aProfession <m2:Peintre> ;
+    ns0:aMort <m2:DécédéeDeCausesNaturelles> ;
+    ns0:aReligion <m2:Christianisme> ;
+    ns0:aVecuEnMemeTempsQue <m2:AlbertEinstein>, <m2:NikolaTesla>, <m2:MartinLutherKingJr>, <m2:AnneFrank> .
+
+<m2:MartinLutherKingJr>
+    foaf:name "Martin Luther King Jr." ;
+    ns0:aGenre <m2:Homme> ;
+    ns0:aContinent <m2:Amérique> ;
+    ns0:aEpoque <m2:EpoqueContemporaine> ;
+    ns0:aProfession <m2:Militant> ;
+    ns0:aMort <m2:Assassinée> ;
+    ns0:aReligion <m2:Christianisme> ;
+    ns0:aVecuEnMemeTempsQue <m2:AlbertEinstein>, <m2:AnneFrank>, <m2:FridaKahlo>, <m2:MarieCurie> .
+
+<m2:NikolaTesla>
+    foaf:name "Nikola Tesla" ;
+    ns0:aGenre <m2:Homme> ;
+    ns0:aContinent <m2:Europe>, <m2:Amérique> ;
+    ns0:aEpoque <m2:EpoqueContemporaine> ;
+    ns0:aProfession <m2:Scientifique> ;
+    ns0:aMort <m2:DécédéeDeCausesNaturelles> ;
+    ns0:aReligion <m2:Christianisme> ;
+    ns0:aVecuEnMemeTempsQue <m2:AlbertEinstein>, <m2:AnneFrank>, <m2:FridaKahlo>, <m2:MarieCurie>, <m2:MartinLutherKingJr> .
+
+<m2:NapoleonBonaparte>
+    foaf:name "Napoléon Bonaparte" ;
+    ns0:aGenre <m2:Homme> ;
+    ns0:aContinent <m2:Europe> ;
+    ns0:aEpoque <m2:EpoqueModerne> ;
+    ns0:aProfession <m2:Empereur/Impératrice> ;
+    ns0:aMort <m2:DécédéeDeCausesNaturelles> ;
+    ns0:aReligion <m2:Christianisme> ;
+    ns0:aVecuEnMemeTempsQue <m2:GeorgeWashington>, <m2:Marie-Antoinette> .
+
+<m2:AnneFrank>
+    foaf:name "Anne Frank" ;
+    ns0:aGenre <m2:Femme> ;
+    ns0:aContinent <m2:Europe> ;
+    ns0:aEpoque <m2:EpoqueContemporaine> ;
+    ns0:aProfession <m2:Ecrivain> ;
+    ns0:aMort <m2:DécédéeDeCausesNaturelles> ;
+    ns0:aReligion <m2:Judaisme> ;
+    ns0:aVecuEnMemeTempsQue <m2:AlbertEinstein>, <m2:NikolaTesla>, <m2:MartinLutherKingJr>, <m2:FridaKahlo> .
+
+<m2:MarieCurie>
+    foaf:name "Marie Curie" ;
+    ns0:aGenre <m2:Femme> ;
+    ns0:aContinent <m2:Europe> ;
+    ns0:aEpoque <m2:EpoqueContemporaine> ;
+    ns0:aProfession <m2:Scientifique> ;
+    ns0:aMort <m2:DécédéeDeCausesNaturelles> ;
+    ns0:aReligion <m2:Christianisme> ;
+    ns0:aVecuEnMemeTempsQue <m2:AlbertEinstein>, <m2:NikolaTesla>, <m2:MartinLutherKingJr>, <m2:FridaKahlo> .
+
+<m2:JulesCesar>
+    foaf:name "César" ;
+    ns0:aGenre <m2:Homme> ;
+    ns0:aContinent <m2:Europe> ;
+    ns0:aEpoque <m2:Antiquité> ;
+    ns0:aProfession <m2:Politique> ;
+    ns0:aMort <m2:Assassinée> ;
+    ns0:aReligion <m2:GrecoRomanisme> ;
+    ns0:aVecuEnMemeTempsQue <m2:Cleopatre>, <m2:Vercingetorix> .
+
+<m2:Vercingetorix>
+    foaf:name "Vercingétorix" ;
+    ns0:aGenre <m2:Homme> ;
+    ns0:aContinent <m2:Europe> ;
+    ns0:aEpoque <m2:Antiquité> ;
+    ns0:aProfession <m2:guerrier> ;
+    ns0:aMort <m2:Exécutée> ;
+    ns0:aReligion <m2:Polytheisme> ;
+    ns0:aVecuEnMemeTempsQue <m2:César>, <m2:Cleopatre> .
+
+<m2:AlexandreLeGrand>
+    foaf:name "Alexandre le Grand" ;
+    ns0:aGenre <m2:Homme> ;
+    ns0:aContinent <m2:Europe> ;
+    ns0:aEpoque <m2:Antiquité> ;
+    ns0:aProfession <m2:guerrier>, <m2:Roi/Reine> ;
+    ns0:aMort <m2:DécédéeDeCausesNaturelles> ;
+    ns0:aReligion <m2:GrecoRomanisme> ;
+    ns0:aVecuEnMemeTempsQue <m2:Aristote> .
+
+<m2:QinShiHuang>
+    foaf:name "Qin Shi Huang" ;
+    ns0:aGenre <m2:Homme> ;
+    ns0:aContinent <m2:Asie> ;
+    ns0:aEpoque <m2:Antiquité> ;
+    ns0:aProfession <m2:Roi/Reine> ;
+    ns0:aMort <m2:DécédéeDeCausesNaturelles> ;
+    ns0:aReligion <m2:Polytheisme> .
+
+<m2:WilliamShakespeare>
+    foaf:name "William Shakespeare" ;
+    ns0:aGenre <m2:Homme> ;
+    ns0:aContinent <m2:Europe> ;
+    ns0:aEpoque <m2:Renaissance> ;
+    ns0:aProfession <m2:Poète>, <m2:Dramaturge> ;
+    ns0:aMort <m2:DécédéeDeCausesNaturelles> ;
+    ns0:aReligion <m2:Christianisme> .
+
+<m2:SunTzu>
+    foaf:name "Sun Tzu" ;
+    ns0:aGenre <m2:Homme> ;
+    ns0:aContinent <m2:Asie> ;
+    ns0:aEpoque <m2:Antiquité> ;
+    ns0:aProfession <m2:Philosophe> ;
+    ns0:aMort <m2:DécédéeDeCausesNaturelles> ;
+    ns0:aReligion <m2:Polytheisme> .
+
+<m2:Pythagore>
+    foaf:name "Pythagore" ;
+    ns0:aGenre <m2:Homme> ;
+    ns0:aContinent <m2:Europe> ;
+    ns0:aEpoque <m2:Antiquité> ;
+    ns0:aProfession <m2:Philosophe> ;
+    ns0:aMort <m2:DécédéeDeCausesNaturelles> ;
+    ns0:aReligion <m2:Polytheisme> .
+
+<m2:MarieAntoinette>
+    foaf:name "Marie-Antoinette" ;
+    ns0:aGenre <m2:Femme> ;
+    ns0:aContinent <m2:Europe> ;
+    ns0:aEpoque <m2:EpoqueModerne> ;
+    ns0:aProfession <m2:Roi/Reine> ;
+    ns0:aMort <m2:Exécutée> ;
+    ns0:aReligion <m2:Christianisme> ;
+    ns0:aVecuEnMemeTempsQue <m2:NapoleonBonaparte>, <m2:GeorgeWashington> .
+
+<m2:CatherineDeMedici>
+    foaf:name "Catherine de Médicis" ;
+    ns0:aGenre <m2:Femme> ;
+    ns0:aContinent <m2:Europe> ;
+    ns0:aEpoque <m2:Renaissance> ;
+    ns0:aProfession <m2:Roi/Reine> ;
+    ns0:aMort <m2:DécédéeDeCausesNaturelles> ;
+    ns0:aReligion <m2:Christianisme> .
+
+<m2:IsaacNewton>
+    foaf:name "Isaac Newton" ;
+    ns0:aGenre <m2:Homme> ;
+    ns0:aContinent <m2:Europe> ;
+    ns0:aEpoque <m2:EpoqueModerne> ;
+    ns0:aProfession <m2:Scientifique> ;
+    ns0:aMort <m2:DécédéeDeCausesNaturelles> ;
+    ns0:aReligion <m2:Christianisme> .
+
+<m2:Molière>
+    foaf:name "Molière" ;
+    ns0:aGenre <m2:Homme> ;
+    ns0:aContinent <m2:Europe> ;
+    ns0:aEpoque <m2:EpoqueModerne> ;
+    ns0:aProfession <m2:Poète>, <m2:Dramaturge> ;
+    ns0:aMort <m2:DécédéeDeCausesNaturelles> ;
+    ns0:aReligion <m2:Christianisme> .
+
+<m2:GalileoGalilei>
+    foaf:name "Galilée" ;
+    ns0:aGenre <m2:Homme> ;
+    ns0:aContinent <m2:Europe> ;
+    ns0:aEpoque <m2:EpoqueModerne> ;
+    ns0:aProfession <m2:Scientifique> ;
+    ns0:aMort <m2:DécédéeDeCausesNaturelles> ;
+    ns0:aReligion <m2:Christianisme> .
+
+<m2:NelsonMandela>
+    foaf:name "Nelson Mandela" ;
+    ns0:aGenre <m2:Homme> ;
+    ns0:aContinent <m2:Afrique> ;
+    ns0:aEpoque <m2:EpoqueContemporaine> ;
+    ns0:aProfession <m2:Militant>, <m2:Président> ;
+    ns0:aMort <m2:DécédéeDeCausesNaturelles> ;
+    ns0:aReligion <m2:Christianisme> .
+
+<m2:GeorgeWashington>
+    foaf:name "George Washington" ;
+    ns0:aGenre <m2:Homme> ;
+    ns0:aContinent <m2:Amérique> ;
+    ns0:aEpoque <m2:EpoqueModerne> ;
+    ns0:aProfession <m2:Président> ;
+    ns0:aMort <m2:DécédéeDeCausesNaturelles> ;
+    ns0:aReligion <m2:Christianisme> ;
+    ns0:aVecuEnMemeTempsQue <m2:NapoleonBonaparte>, <m2:Marie-Antoinette> .
+
+<m2:Confucius>
+    foaf:name "Confucius" ;
+    ns0:aGenre <m2:Homme> ;
+    ns0:aContinent <m2:Asie> ;
+    ns0:aEpoque <m2:Antiquité> ;
+    ns0:aProfession <m2:Philosophe> ;
+    ns0:aMort <m2:DécédéeDeCausesNaturelles> ;
+    ns0:aReligion <m2:Polytheisme> .
+
+<m2:ChristopherColumbus>
+    foaf:name "Christophe Colomb" ;
+    ns0:aGenre <m2:Homme> ;
+    ns0:aContinent <m2:Europe>, <m2:Amérique> ;
+    ns0:aEpoque <m2:EpoqueModerne> ;
+    ns0:aProfession <m2:Explorateur> ;
+    ns0:aMort <m2:DécédéeDeCausesNaturelles> ;
+    ns0:aReligion <m2:Christianisme> .
+
+<m2:Géronimo>
+    foaf:name "Géronimo" ;
+    ns0:aGenre <m2:Homme> ;
+    ns0:aContinent <m2:Amérique> ;
+    ns0:aEpoque <m2:EpoqueModerne> ;
+    ns0:aProfession <m2:Militant> ;
+    ns0:aMort <m2:DécédéeDeCausesNaturelles> .
+
+<m2:Aristote>
+    foaf:name "Aristote" ;
+    ns0:aGenre <m2:Homme> ;
+    ns0:aContinent <m2:Europe> ;
+    ns0:aEpoque <m2:Antiquité> ;
+    ns0:aProfession <m2:Philosophe> ;
+    ns0:aMort <m2:DécédéeDeCausesNaturelles> ;
+    ns0:aReligion <m2:GrecoRomanisme> ;
+    ns0:aVecuEnMemeTempsQue <m2:AlexandreLeGrand> .
+
+<m2:Toutankhamon>
+    foaf:name "Toutânkhamon" ;
+    ns0:aGenre <m2:Homme> ;
+    ns0:aContinent <m2:Afrique> ;
+    ns0:aEpoque <m2:Antiquité> ;
+    ns0:aProfession <m2:Roi/Reine> ;
+    ns0:aMort <m2:DécédéeDeCausesNaturelles> ;
+    ns0:aReligion <m2:Egyptianisme> .
+
+<m2:MichelAnge>
+    foaf:name "Michel-Ange" ;
+    ns0:aGenre <m2:Homme> ;
+    ns0:aContinent <m2:Europe> ;
+    ns0:aEpoque <m2:Renaissance> ;
+    ns0:aProfession <m2:Peintre>, <m2:Sculpteur> ;
+    ns0:aMort <m2:DécédéeDeCausesNaturelles> ;
+    ns0:aReligion <m2:Christianisme> ;
+    ns0:aVecuEnMemeTempsQue <m2:LeonardDeVinci>, <m2:CatherineDeMedici> .
+
+<m2:JosephStaline>
+    foaf:name "Joseph Staline" ;
+    ns0:aGenre <m2:Homme> ;
+    ns0:aContinent <m2:Europe>, <m2:Asie> ;
+    ns0:aEpoque <m2:EpoqueContemporaine> ;
+    ns0:aProfession <m2:Politique>, <m2:Président> ;
+    ns0:aMort <m2:DécédéeDeCausesNaturelles> ;
+    ns0:aReligion <m2:Christianisme> ;
+    ns0:aVecuEnMemeTempsQue <m2:AdolfHitler>, <m2:MaoZedong> .
+
+<m2:AdolfHitler>
+    foaf:name "Adolf Hitler" ;
+    ns0:aGenre <m2:Homme> ;
+    ns0:aContinent <m2:Europe> ;
+    ns0:aEpoque <m2:EpoqueContemporaine> ;
+    ns0:aProfession <m2:Politique> ;
+    ns0:aMort <m2:Suicide> ;
+    ns0:aVecuEnMemeTempsQue <m2:JosephStaline> .
+
+<m2:MaoZedong>
+    foaf:name "Mao Zedong" ;
+    ns0:aGenre <m2:Homme> ;
+    ns0:aContinent <m2:Asie> ;
+    ns0:aEpoque <m2:EpoqueContemporaine> ;
+    ns0:aProfession <m2:Politique> ;
+    ns0:aMort <m2:DécédéeDeCausesNaturelles> ;
+    ns0:aReligion <m2:Confucianisme> ;
+    ns0:aVecuEnMemeTempsQue <m2:JosephStaline> .
+
+<m2:SolimanLeMagnifique>
+    foaf:name "Soliman le Magnifique" ;
+    ns0:aGenre <m2:Homme> ;
+    ns0:aContinent <m2:Asie> ;
+    ns0:aEpoque <m2:Renaissance> ;
+    ns0:aProfession <m2:Roi/Reine> ;
+    ns0:aMort <m2:DécédéeDeCausesNaturelles> ;
+    ns0:aReligion <m2:Islam> .
+
+<m2:JulesFerry>
+    foaf:name "Jules Ferry" ;
+    ns0:aGenre <m2:Homme> ;
+    ns0:aContinent <m2:Europe> ;
+    ns0:aEpoque <m2:EpoqueContemporaine> ;
+    ns0:aProfession <m2:Politique> ;
+    ns0:aMort <m2:DécédéeDeCausesNaturelles> ;
+    ns0:aReligion <m2:Christianisme> .
+
+<m2:Copernic>
+    foaf:name "Copernic" ;
+    ns0:aGenre <m2:Homme> ;
+    ns0:aContinent <m2:Europe> ;
+    ns0:aEpoque <m2:Renaissance> ;
+    ns0:aProfession <m2:Scientifique> ;
+    ns0:aMort <m2:DécédéeDeCausesNaturelles> ;
+    ns0:aReligion <m2:Christianisme> .
+
+<m2:Neron>
+    foaf:name "Néron" ;
+    ns0:aGenre <m2:Homme> ;
+    ns0:aContinent <m2:Europe> ;
+    ns0:aEpoque <m2:Antiquité> ;
+    ns0:aProfession <m2:Roi/Reine> ;
+    ns0:aMort <m2:Suicide> ;
+    ns0:aReligion <m2:GrecoRomanisme> .
+
+<m2:Pericles>
+    foaf:name "Périclès" ;
+    ns0:aGenre <m2:Homme> ;
+    ns0:aContinent <m2:Europe> ;
+    ns0:aEpoque <m2:Antiquité> ;
+    ns0:aProfession <m2:Politique>, <m2:Guerrier> ;
+    ns0:aMort <m2:DécédéeDeCausesNaturelles> ;
+    ns0:aReligion <m2:Polytheisme> .
+
+<m2:Auguste>
+    foaf:name "Auguste" ;
+    ns0:aGenre <m2:Homme> ;
+    ns0:aContinent <m2:Europe> ;
+    ns0:aEpoque <m2:Antiquité> ;
+    ns0:aProfession <m2:Guerrier>, <m2:Roi/Reine> ;
+    ns0:aMort <m2:DécédéeDeCausesNaturelles> ;
+    ns0:aReligion <m2:GrecoRomanisme> ;
+    ns0:aVecuEnMemeTempsQue <m2:JulesCesar> .
+
+<m2:AbrahamLincoln>
+    foaf:name "Abraham Lincoln" ;
+    ns0:aGenre <m2:Homme> ;
+    ns0:aContinent <m2:Amérique> ;
+    ns0:aEpoque <m2:EpoqueContemporaine> ;
+    ns0:aProfession <m2:Président> ;
+    ns0:aMort <m2:Assassinée> .
+
+<m2:Attila>
+    foaf:name "Attila" ;
+    ns0:aGenre <m2:Homme> ;
+    ns0:aContinent <m2:Europe>, <m2:Asie> ;
+    ns0:aEpoque <m2:Antiquité> ;
+    ns0:aProfession <m2:Guerrier>, <m2:Roi/Reine> ;
+    ns0:aMort <m2:DécédéeDeCausesNaturelles> .
+
+<m2:MansaMoussa>
+    foaf:name "Mansa Moussa" ;
+    ns0:aGenre <m2:Homme> ;
+    ns0:aContinent <m2:Afrique> ;
+    ns0:aEpoque <m2:Antiquité> ;
+    ns0:aProfession <m2:Roi/Reine> ;
+    ns0:aMort <m2:DécédéeDeCausesNaturelles> .
+
+<m2:LeonTrotsky>
+    foaf:name "Leon Trotsky" ;
+    ns0:aGenre <m2:Homme> ;
+    ns0:aContinent <m2:Europe> ;
+    ns0:aEpoque <m2:EpoqueContemporaine> ;
+    ns0:aProfession <m2:Politique> ;
+    ns0:aMort <m2:Assassinée> ;
+    ns0:aVecuEnMemeTempsQue <m2:JosephStaline> .
+
+<m2:WinstonChurchill>
+    foaf:name "Winston Churchill" ;
+    ns0:aGenre <m2:Homme> ;
+    ns0:aContinent <m2:Europe> ;
+    ns0:aEpoque <m2:EpoqueContemporaine> ;
+    ns0:aProfession <m2:Politique> ;
+    ns0:aMort <m2:DécédéeDeCausesNaturelles> ;
+    ns0:aVecuEnMemeTempsQue <m2:JosephStaline>, <m2:AdolfHitler> .
