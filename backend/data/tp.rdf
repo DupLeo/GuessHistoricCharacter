@@ -99,10 +99,6 @@
         <rdfs:subClassOf rdf:resource="m2:Religion"/>
     </rdfs:Class>
 
-    <rdfs:Class rdf:about="m2:Confucianisme">
-        <rdfs:subClassOf rdf:resource="m2:Religion"/>   
-    </rdfs:Class>
-
     <rdfs:Class rdf:about="m2:Polythéisme">
         <rdfs:subClassOf rdf:resource="m2:Religion"/>
     </rdfs:Class>
@@ -144,11 +140,11 @@
         <rdfs:subClassOf rdf:resource="m2:Politique"/>
     </rdfs:Class>
 
-    <rdfs:Class rdf:about="m2:Roi/Reine">
+    <rdfs:Class rdf:about="m2:RoiReine">
         <rdfs:subClassOf rdf:resource="m2:Noble"/>
     </rdfs:Class>
 
-    <rdfs:Class rdf:about="m2:Empereur/Impératrice">
+    <rdfs:Class rdf:about="m2:EmpereurImpératrice">
         <rdfs:subClassOf rdf:resource="m2:Noble"/>
     </rdfs:Class>
 
@@ -168,7 +164,7 @@
         <rdfs:subClassOf rdf:resource="m2:Profession"/>
     </rdfs:Class>
 
-    <rdfs:Class rdf:about="m2:guerrier">
+    <rdfs:Class rdf:about="m2:Guerrier">
         <rdfs:subClassOf rdf:resource="m2:Profession"/>
     </rdfs:Class>
 
@@ -271,7 +267,7 @@
         <m2:aGenre rdf:resource="m2:Femme"/>
         <m2:aContinent rdf:resource="m2:Afrique"/>
         <m2:aEpoque rdf:resource="m2:Antiquité"/>
-        <m2:aProfession rdf:resource="m2:Roi/Reine"/>
+        <m2:aProfession rdf:resource="m2:RoiReine"/>
         <m2:aMort rdf:resource="m2:Suicide"/>
         <m2:aReligion rdf:resource="m2:Egyptianisme"/>
     </rdf:Description>
@@ -283,12 +279,16 @@
         <m2:aEpoque rdf:resource="m2:EpoqueContemporaine"/>
         <m2:aProfession rdf:resource="m2:Scientifique"/>
         <m2:aMort rdf:resource="m2:DécédéeDeCausesNaturelles"/>
-        <m2:aReligion rdf:resource="m2:Judaisme"/>
+        <m2:aReligion rdf:resource="m2:Judaïsme"/>
         <m2:aVecuEnMemeTempsQue rdf:resource="m2:NikolaTesla"/>
         <m2:aVecuEnMemeTempsQue rdf:resource="m2:MartinLutherKingJr"/>
         <m2:aVecuEnMemeTempsQue rdf:resource="m2:FridaKahlo"/>
         <m2:aVecuEnMemeTempsQue rdf:resource="m2:AnneFrank"/>
         <m2:aVecuEnMemeTempsQue rdf:resource="m2:MarieCurie"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:AdolfHitler"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:WinstonChurchill"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:MaoZedong"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:JosephStaline"/>
     </rdf:Description>
 
     <rdf:Description rdf:about="m2:JaenneDArc">
@@ -296,7 +296,7 @@
         <m2:aGenre rdf:resource="m2:Femme"/>
         <m2:aContinent rdf:resource="m2:Europe"/>
         <m2:aEpoque rdf:resource="m2:MoyenAge"/>
-        <m2:aProfession rdf:resource="m2:guerrier"/>
+        <m2:aProfession rdf:resource="m2:Guerrier"/>
         <m2:aMort rdf:resource="m2:Exécutée"/>
         <m2:aReligion rdf:resource="m2:Christianisme"/>
     </rdf:Description>
@@ -306,7 +306,7 @@
         <m2:aGenre rdf:resource="m2:Homme"/>
         <m2:aContinent rdf:resource="m2:Asie"/>
         <m2:aEpoque rdf:resource="m2:MoyenAge"/>
-        <m2:aProfession rdf:resource="m2:Empereur/Impératrice"/>
+        <m2:aProfession rdf:resource="m2:EmpereurImpératricesme"/>
         <m2:aMort rdf:resource="m2:DécédéeDeCausesNaturelles"/>
         <m2:aVecuEnMemeTempsQue rdf:resource="m2:KulilKhan"/>
     </rdf:Description>
@@ -347,7 +347,11 @@
         <m2:aVecuEnMemeTempsQue rdf:resource="m2:MartinLutherKingJr"/>
         <m2:aVecuEnMemeTempsQue rdf:resource="m2:AnneFrank"/>
         <m2:aVecuEnMemeTempsQue rdf:resource="m2:MarieCurie"/>
-        </m2:aVecuEnMemeTempsQue rdf:resource="m2:WinstonChurchill"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:WinstonChurchill"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:AdolfHitler"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:MaoZedong"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:JosephStaline"/>
+
     </rdf:Description>
 
     <rdf:Description rdf:about="m2:MartinLutherKingJr">
@@ -362,6 +366,10 @@
         <m2:aVecuEnMemeTempsQue rdf:resource="m2:AnneFrank"/>
         <m2:aVecuEnMemeTempsQue rdf:resource="m2:FridaKahlo"/>
         <m2:aVecuEnMemeTempsQue rdf:resource="m2:MarieCurie"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:AdolfHitler"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:WinstonChurchill"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:MaoZedong"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:JosephStaline"/>
 
     </rdf:Description>
     
@@ -379,7 +387,10 @@
         <m2:aVecuEnMemeTempsQue rdf:resource="m2:FridaKahlo"/>
         <m2:aVecuEnMemeTempsQue rdf:resource="m2:MarieCurie"/>
         <m2:aVecuEnMemeTempsQue rdf:resource="m2:MartinLutherKingJr"/>
-
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:AdolfHitler"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:WinstonChurchill"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:MaoZedong"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:JosephStaline"/>
     </rdf:Description>
 
     <rdf:Description rdf:about="m2:NapoleonBonaparte">
@@ -401,11 +412,16 @@
         <m2:aEpoque rdf:resource="m2:EpoqueContemporaine"/>
         <m2:aProfession rdf:resource="m2:Ecrivain"/>
         <m2:aMort rdf:resource="m2:DécédéeDeCausesNaturelles"/>
-        <m2:aReligion rdf:resource="m2:Judaisme"/>
+        <m2:aReligion rdf:resource="m2:Judaïsme"/>
         <m2:aVecuEnMemeTempsQue rdf:resource="m2:AlbertEinstein"/>
         <m2:aVecuEnMemeTempsQue rdf:resource="m2:NikolaTesla"/>
         <m2:aVecuEnMemeTempsQue rdf:resource="m2:MartinLutherKingJr"/>
         <m2:aVecuEnMemeTempsQue rdf:resource="m2:FridaKahlo"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:MarieCurie"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:AdolfHitler"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:WinstonChurchill"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:MaoZedong"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:JosephStaline"/>
     </rdf:Description>
 
     <rdf:Description rdf:about="m2:MarieCurie">
@@ -420,6 +436,11 @@
         <m2:aVecuEnMemeTempsQue rdf:resource="m2:NikolaTesla"/>
         <m2:aVecuEnMemeTempsQue rdf:resource="m2:MartinLutherKingJr"/>  
         <m2:aVecuEnMemeTempsQue rdf:resource="m2:FridaKahlo"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:AnneFrank"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:WinstonChurchill"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:AdolfHitler"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:MaoZedong"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:JosephStaline"/>
     </rdf:Description>
 
     <rdf:Description rdf:about="m2:JulesCesar">
@@ -427,7 +448,7 @@
         <m2:aGenre rdf:resource="m2:Homme"/>
         <m2:aContinent rdf:resource="m2:Europe"/>
         <m2:aEpoque rdf:resource="m2:Antiquité"/>
-        <m2:aProfession rdf:resource="m2:Politique"/>
+        <m2:aProfession rdf:resource="m2:RoiReine"/>
         <m2:aMort rdf:resource="m2:Assassinée"/>
         <m2:aReligion rdf:resource="m2:GrecoRomanisme"/>
         <m2:aVecuEnMemeTempsQue rdf:resource="m2:Cleopatre"/>
@@ -439,9 +460,9 @@
         <m2:aGenre rdf:resource="m2:Homme"/>
         <m2:aContinent rdf:resource="m2:Europe"/>
         <m2:aEpoque rdf:resource="m2:Antiquité"/>
-        <m2:aProfession rdf:resource="m2:guerrier"/>
+        <m2:aProfession rdf:resource="m2:Guerrier"/>
         <m2:aMort rdf:resource="m2:Exécutée"/>
-        <m2:aReligion rdf:resource="m2:Polytheisme"/>
+        <m2:aReligion rdf:resource="m2:Polythéisme"/>
         <m2:aVecuEnMemeTempsQue rdf:resource="m2:César"/>
         <m2:aVecuEnMemeTempsQue rdf:resource="m2:Cleopatre"/>
     </rdf:Description>
@@ -451,8 +472,8 @@
         <m2:aGenre rdf:resource="m2:Homme"/>
         <m2:aContinent rdf:resource="m2:Europe"/>
         <m2:aEpoque rdf:resource="m2:Antiquité"/>
-        <m2:aProfession rdf:resource="m2:guerrier"/>
-        <m2:aProfession rdf:resource="m2:Roi/Reine"/>
+        <m2:aProfession rdf:resource="m2:Guerrier"/>
+        <m2:aProfession rdf:resource="m2:RoiReine"/>
         <m2:aMort rdf:resource="m2:DécédéeDeCausesNaturelles"/>
         <m2:aReligion rdf:resource="m2:GrecoRomanisme"/>
         <m2:aVecuEnMemeTempsQue rdf:resource="m2:Aristote"/>
@@ -463,9 +484,9 @@
         <m2:aGenre rdf:resource="m2:Homme"/>
         <m2:aContinent rdf:resource="m2:Asie"/>
         <m2:aEpoque rdf:resource="m2:Antiquité"/>
-        <m2:aProfession rdf:resource="m2:Roi/Reine"/>
+        <m2:aProfession rdf:resource="m2:Empereur"/>
         <m2:aMort rdf:resource="m2:DécédéeDeCausesNaturelles"/>
-        <m2:aReligion rdf:resource="m2:Polytheisme"/>
+        <m2:aReligion rdf:resource="m2:Polythéisme"/>
     </rdf:Description>
 
     <rdf:Description rdf:about="m2:WilliamShakespeare">
@@ -486,7 +507,7 @@
         <m2:aEpoque rdf:resource="m2:Antiquité"/>
         <m2:aProfession rdf:resource="m2:Philosophe"/>
         <m2:aMort rdf:resource="m2:DécédéeDeCausesNaturelles"/>
-        <m2:aReligion rdf:resource="m2:Polytheisme"/>
+        <m2:aReligion rdf:resource="m2:Polythéisme"/>
     </rdf:Description>
 
     <rdf:Description rdf:about="m2:Pythagore">
@@ -496,7 +517,7 @@
         <m2:aEpoque rdf:resource="m2:Antiquité"/>
         <m2:aProfession rdf:resource="m2:Philosophe"/>
         <m2:aMort rdf:resource="m2:DécédéeDeCausesNaturelles"/>
-        <m2:aReligion rdf:resource="m2:Polytheisme"/>
+        <m2:aReligion rdf:resource="m2:Polythéisme"/>
     </rdf:Description>
 
     <rdf:Description rdf:about="m2:MarieAntoinette">
@@ -504,7 +525,7 @@
         <m2:aGenre rdf:resource="m2:Femme"/>
         <m2:aContinent rdf:resource="m2:Europe"/>
         <m2:aEpoque rdf:resource="m2:EpoqueModerne"/>
-        <m2:aProfession rdf:resource="m2:Roi/Reine"/>
+        <m2:aProfession rdf:resource="m2:RoiReine"/>
         <m2:aMort rdf:resource="m2:Exécutée"/>
         <m2:aReligion rdf:resource="m2:Christianisme"/>
         <m2:aVecuEnMemeTempsQue rdf:resource="m2:NapoleonBonaparte"/>
@@ -516,7 +537,7 @@
         <m2:aGenre rdf:resource="m2:Femme"/>
         <m2:aContinent rdf:resource="m2:Europe"/>
         <m2:aEpoque rdf:resource="m2:Renaissance"/>
-        <m2:aProfession rdf:resource="m2:Roi/Reine"/>
+        <m2:aProfession rdf:resource="m2:RoiReine"/>
         <m2:aMort rdf:resource="m2:DécédéeDeCausesNaturelles"/>
         <m2:aReligion rdf:resource="m2:Christianisme"/>
     </rdf:Description>
@@ -561,6 +582,12 @@
         <m2:aProfession rdf:resource="m2:Président"/>
         <m2:aMort rdf:resource="m2:DécédéeDeCausesNaturelles"/>
         <m2:aReligion rdf:resource="m2:Christianisme"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:AlbertEinstein"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:NikolaTesla"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:MartinLutherKingJr"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:FridaKahlo"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:AnneFrank"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:MarieCurie"/>
     </rdf:Description>
 
     <rdf:Description rdf:about="m2:GeorgeWashington">
@@ -582,7 +609,6 @@
         <m2:aEpoque rdf:resource="m2:Antiquité"/>
         <m2:aProfession rdf:resource="m2:Philosophe"/>
         <m2:aMort rdf:resource="m2:DécédéeDeCausesNaturelles"/>
-        <m2:aReligion rdf:resource="m2:Polytheisme"/>
     </rdf:Description>
 
     <rdf:Description rdf:about="m2:ChristopherColumbus">
@@ -621,7 +647,7 @@
     <m2:aGenre rdf:resource="m2:Homme"/>
     <m2:aContinent rdf:resource="m2:Afrique"/>
     <m2:aEpoque rdf:resource="m2:Antiquité"/>
-    <m2:aProfession rdf:resource="m2:Roi/Reine"/>
+    <m2:aProfession rdf:resource="m2:RoiReine"/>
     <m2:aMort rdf:resource="m2:DécédéeDeCausesNaturelles"/>
     <m2:aReligion rdf:resource="m2:Egyptianisme"/>
     </rdf:Description>
@@ -651,6 +677,10 @@
         <m2:aReligion rdf:resource="m2:Christianisme"/>
         <m2:aVecuEnMemeTempsQue rdf:resource="m2:AdolfHitler"/>
         <m2:aVecuEnMemeTempsQue rdf:resource="m2:MaoZedong"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:FridaKahlo"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:AlbertEinstein"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:NikolaTesla"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:MarieCurie"/>
     </rdf:Description>
 
     <rdf:Description rdf:about="m2:AdolfHitler">
@@ -661,6 +691,11 @@
         <m2:aProfession rdf:resource="m2:Politique"/>
         <m2:aMort rdf:resource="m2:Suicide"/>
         <m2:aVecuEnMemeTempsQue rdf:resource="m2:JosephStaline"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:FridaKahlo"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:AlbertEinstein"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:NikolaTesla"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:MarieCurie"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:MaoZedong"/>
     </rdf:Description>
 
     <rdf:Description rdf:about="m2:MaoZedong">
@@ -672,6 +707,11 @@
         <m2:aMort rdf:resource="m2:DécédéeDeCausesNaturelles"/>
         <m2:aReligion rdf:resource="m2:Confucianisme"/>
         <m2:aVecuEnMemeTempsQue rdf:resource="m2:JosephStaline"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:AdolfHitler"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:FridaKahlo"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:AlbertEinstein"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:NikolaTesla"/>
+        <m2:aVecuEnMemeTempsQue rdf:resource="m2:MarieCurie"/>
     </rdf:Description>
 
     <rdf:Description rdf:about="m2:SolimanLeMagnifique">
@@ -679,7 +719,8 @@
         <m2:aGenre rdf:resource="m2:Homme"/>
         <m2:aContinent rdf:resource="m2:Asie"/>
         <m2:aEpoque rdf:resource="m2:Renaissance"/>
-        <m2:aProfession rdf:resource="m2:Roi/Reine"/>
+        <m2:aProfession rdf:resource="m2:RoiReine"/>
+        <m2:aProfession rdf:resource="m2:Guerrier"/>
         <m2:aMort rdf:resource="m2:DécédéeDeCausesNaturelles"/>
         <m2:aReligion rdf:resource="m2:Islam"/>
     </rdf:Description>
@@ -709,7 +750,7 @@
         <m2:aGenre rdf:resource="m2:Homme"/>
         <m2:aContinent rdf:resource="m2:Europe"/>
         <m2:aEpoque rdf:resource="m2:Antiquité"/>
-        <m2:aProfession rdf:resource="m2:Roi/Reine"/>
+        <m2:aProfession rdf:resource="m2:Empereur"/>
         <m2:aMort rdf:resource="m2:Suicide"/>
         <m2:aReligion rdf:resource="m2:GrecoRomanisme"/>
     </rdf:Description>
@@ -722,7 +763,7 @@
         <m2:aProfession rdf:resource="m2:Politique"/>
         <m2:aProfession rdf:resource="m2:Guerrier"/>
         <m2:aMort rdf:resource="m2:DécédéeDeCausesNaturelles"/>
-        <m2:aReligion rdf:resource="m2:Polytheisme"/>
+        <m2:aReligion rdf:resource="m2:Polythéisme"/>
     </rdf:Description>
 
     <rdf:Description rdf:about="m2:Auguste">
@@ -731,7 +772,7 @@
         <m2:aContinent rdf:resource="m2:Europe"/>
         <m2:aEpoque rdf:resource="m2:Antiquité"/>
         <m2:aProfession rdf:resource="m2:Guerrier"/>
-        <m2:aProfession rdf:resource="m2:Roi/Reine"/>
+        <m2:aProfession rdf:resource="m2:RoiReine"/>
         <m2:aMort rdf:resource="m2:DécédéeDeCausesNaturelles"/>
         <m2:aReligion rdf:resource="m2:GrecoRomanisme"/>
         <m2:aVecuEnMemeTempsQue rdf:resource="m2:JulesCesar"/>
@@ -754,7 +795,7 @@
         <m2:aContinent rdf:resource="m2:Asie"/>
         <m2:aEpoque rdf:resource="m2:Antiquité"/>
         <m2:aProfession rdf:resource="m2:Guerrier"/>
-        <m2:aProfession rdf:resource="m2:Roi/Reine"/>
+        <m2:aProfession rdf:resource="m2:RoiReine"/>
         <m2:aMort rdf:resource="m2:DécédéeDeCausesNaturelles"/>
     </rdf:Description>
 
@@ -763,7 +804,7 @@
         <m2:aGenre rdf:resource="m2:Homme"/>
         <m2:aContinent rdf:resource="m2:Afrique"/>
         <m2:aEpoque rdf:resource="m2:Antiquité"/>
-        <m2:aProfession rdf:resource="m2:Roi/Reine"/>
+        <m2:aProfession rdf:resource="m2:RoiReine"/>
         <m2:aMort rdf:resource="m2:DécédéeDeCausesNaturelles"/>
     </rdf:Description>
 

@@ -1,140 +1,212 @@
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import Score from "./components/Score.vue";
 import ListePersonnage from "./components/ListePersonnage.vue";
 
-// État du jeu
+/* -------------------- ÉTAT DU JEU -------------------- */
 const gameData = ref(null);
 const loading = ref(false);
 const gameOver = ref(false);
-const gameResult = ref(""); // "win" ou "lose"
+const gameResult = ref(""); // "win" | "lose"
 
-// Nombre de jokers max
-const maxJokers = 2;
-const jokersRemaining = ref(maxJokers);
+/* -------------------- JOKERS -------------------- */
+const MAX_JOKERS = 2;
+const jokersRemaining = ref(MAX_JOKERS);
 
-// Nombre de personnages restants à trouver
+/* -------------------- OBJECTIF -------------------- */
 const remainingToFind = ref(0);
+const correctPersonnages = ref([]);
 
-// Fonction pour récupérer les données depuis le serveur
+/* -------------------- FETCH BACKEND -------------------- */
 const fetchGameData = async () => {
   loading.value = true;
   gameOver.value = false;
   gameResult.value = "";
-  jokersRemaining.value = maxJokers;
+  jokersRemaining.value = MAX_JOKERS;
 
   try {
     const response = await fetch("http://localhost:3000/lunch-game");
-    if (!response.ok) throw new Error("Erreur lors de la récupération des données");
+    if (!response.ok) throw new Error("Erreur serveur");
 
     const data = await response.json();
     gameData.value = data;
-    remainingToFind.value = gameData.value.indices.length;
+
+    remainingToFind.value = data.indices.length;
+
+    correctPersonnages.value = data.indices.map(
+      index => data.personnages[index]
+    );
+
   } catch (err) {
     console.error(err);
-    alert("Impossible de récupérer les données du serveur.");
+    alert("Impossible de récupérer les données du serveur");
   } finally {
     loading.value = false;
   }
 };
 
-// Initialisation
-fetchGameData();
+/* -------------------- LIFECYCLE -------------------- */
+onMounted(fetchGameData);
 
-// Reset du jeu
-const resetGame = async () => {
-  await fetchGameData();
-};
-
-// Fin du jeu
+/* -------------------- ACTIONS -------------------- */
+const resetGame = async () => await fetchGameData();
 const endGame = (result) => {
   gameOver.value = true;
   gameResult.value = result;
 };
-
-// Décrémente le nombre restant si on trouve un personnage correct
 const decrementRemaining = () => {
   remainingToFind.value--;
-  if (remainingToFind.value <= 0) {
-    endGame("win");
-  }
+  if (remainingToFind.value <= 0) endGame("win");
 };
 </script>
 
-
 <template>
-  <header>
-    <Score v-if="gameData" :indice="gameData.indiceText" :nombre="remainingToFind" :jokers="jokersRemaining"
-      @reset="resetGame" />
-  </header>
+  <div class="app-container">
+    <!-- SCORE -->
+    <header v-if="gameData">
+      <Score
+        :indice="gameData.indiceText"
+        :nombre="remainingToFind"
+        :jokers="jokersRemaining"
+        @reset="resetGame"
+      />
+    </header>
 
-  <main>
-    <div v-if="loading">Chargement des données...</div>
+    <!-- CONTENU -->
+    <main>
+      <div v-if="loading" class="loading">
+        ⏳ Chargement de la partie...
+      </div>
 
-    <ListePersonnage v-if="gameData && !gameOver" :gameData="gameData" :jokersRemaining="jokersRemaining"
-      @update-jokers="val => jokersRemaining = val" @found-correct="decrementRemaining" @game-over="endGame" />
+      <ListePersonnage
+        v-if="gameData && !gameOver"
+        :gameData="gameData"
+        :jokersRemaining="jokersRemaining"
+        @update-jokers="val => jokersRemaining = val"
+        @found-correct="decrementRemaining"
+        @game-over="endGame"
+      />
 
-    <div v-if="gameOver" class="end-screen">
-      <h2 v-if="gameResult === 'win'">🎉 Vous avez gagné ! 🎉</h2>
-      <h2 v-else>❌ Vous avez perdu ! ❌</h2>
-      <button class="restart-btn" @click="resetGame">🔄 Recommencer</button>
-    </div>
-  </main>
+      <div v-if="gameOver" class="end-screen">
+        <h2 :class="gameResult === 'win' ? 'win' : 'lose'">
+          {{ gameResult === 'win' ? '🎉 Vous avez gagné !' : '❌ Vous avez perdu' }}
+        </h2>
+
+        <h3 class="reveal-title">🎯 Personnages à trouver</h3>
+
+        <div class="reveal-cards">
+          <div v-for="p in correctPersonnages" :key="p.id" class="reveal-card">
+            👤 {{ p.name }}
+          </div>
+        </div>
+
+        <button class="restart-btn" @click="resetGame">
+          🔄 Rejouer
+        </button>
+      </div>
+    </main>
+  </div>
 </template>
-
 
 <style scoped>
 .app-container {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background: #ffffff;
 }
 
+/* HEADER */
 header {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: #ffffffee;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 0.5rem 2rem;
 }
 
+/* MAIN */
 main {
   flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   padding: 2rem;
+  display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
+/* LOADING */
 .loading {
-  font-size: 1.5rem;
-  color: #1976d2;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #41b883;
 }
 
+/* END SCREEN */
 .end-screen {
   text-align: center;
 }
 
-.end-screen h2 {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-  color: #1976d2;
+.win {
+  color: #41b883;
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
 }
 
-.restart-btn {
-  font-size: 1.2rem;
-  padding: 0.75rem 1.5rem;
-  background: #1976d2;
+.lose {
+  color: #d32f2f;
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.reveal-title {
+  margin: 1rem 0 0.5rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #333;
+}
+
+/* CARDS */
+.reveal-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.reveal-card {
+  min-width: 160px;
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+  font-weight: 600;
+  background-color: #41b883;
   color: #fff;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.reveal-card:hover {
+  transform: translateY(-3px);
+}
+
+/* BUTTON */
+.restart-btn {
+  font-size: 1.1rem;
+  padding: 0.75rem 2rem;
   border: none;
-  border-radius: 0.5rem;
+  border-radius: 2rem;
+  background-color: #41b883;
+  color: #fff;
   cursor: pointer;
-  transition: 0.2s all;
+  transition: 0.2s;
 }
 
 .restart-btn:hover {
-  background: #115293;
+  background-color: #339066;
+  transform: scale(1.05);
 }
 </style>
